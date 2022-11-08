@@ -1,3 +1,12 @@
+import song from './songs.json' assert {type: 'json'};
+
+
+
+
+
+
+
+
 
 // constant elements
 const mainContainer = document.querySelector(".main_container")
@@ -26,33 +35,30 @@ formContainer.appendChild(subBtn)
 mainContainer.appendChild(formContainer)
 
 //SONG PAGE
-
-//song Page wrapping container
-const songPageWrapper = document.createElement("div")
-//header
 const headerContainer = document.createElement("div")
 const headerSong = document.createElement("h1")
 const subheaderSong = document.createElement("h2")
 
-//song iframe
 const songLink = document.createElement("iframe")
 
-// return button
 const returnBtn = document.createElement("button")
 
 
-let dob = 0
+let dob = ""
+let getSong = ""
+let result = ""
 
-subBtn.addEventListener("click", function(){
-    getDoB()
-    getSongPage()
-})
 
 function getDoB(){
-    dob = parseInt(dobInput.value.replace(/-/g,""))
+    dob = dobInput.value.replace(/-/g,"")
+    
+    result = song[`${dob}`]
+    console.log(result)
+    
     mainContainer.removeChild(headerText)
     mainContainer.removeChild(formContainer)
 }
+
 function getSongPage(){
     //header
     headerSong.textContent = "The #1 song"
@@ -63,7 +69,7 @@ function getSongPage(){
     mainContainer.appendChild(headerContainer)
 
     //Song link
-    songLink.setAttribute("src","https://open.spotify.com/embed/track/603N4XGJUTbK760GLCvIIs?utm_source=generator")
+    songLink.setAttribute("src",`${result}`)
     mainContainer.appendChild(songLink)
 
     // Back to landing page
@@ -72,7 +78,12 @@ function getSongPage(){
     mainContainer.appendChild(returnBtn)
 }
 
-function backToMain(){
+subBtn.addEventListener("click", function(){
+    getDoB()
+    getSongPage()
+})
+
+function backToLanding(){
     mainContainer.removeChild(headerContainer)
     mainContainer.removeChild(songLink)
     mainContainer.removeChild(returnBtn)
@@ -85,8 +96,13 @@ function backToMain(){
     formContainer.appendChild(subBtn)
     mainContainer.appendChild(formContainer)
 }
-returnBtn.addEventListener("click", backToMain)
+
+returnBtn.addEventListener("click", backToLanding)
 
 
+// HOW TO GET SONG 
 
+// LINK SONG URI IF dob = inbetween 2 dates 
+
+// create database of all songs and 
 
