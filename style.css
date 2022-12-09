@@ -1,4 +1,4 @@
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 500px){
 
 
 *{
@@ -68,10 +68,18 @@ iframe{
     width: 50%;
 }
 
+.header_container_song{
+
 }
 
+.header_song{
 
+}
 
+.return_btn{
+    width: 50%;
+    height: 5%;
+}
 
 .header_container_song{
 
@@ -85,3 +93,14 @@ iframe{
     width: 50%;
     height: 5%;
 }
+
+
+
+
+
+
+}
+
+
+
+

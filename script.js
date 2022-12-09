@@ -1,13 +1,6 @@
 import song from './songs.json' assert {type: 'json'};
 
 
-
-
-
-
-
-
-
 // constant elements
 const mainContainer = document.querySelector(".main_container")
 
@@ -45,16 +38,13 @@ const returnBtn = document.createElement("button")
 
 
 let dob = ""
-let getSong = ""
 let result = ""
 
 
 function getDoB(){
     dob = dobInput.value.replace(/-/g,"")
-    
     result = song[`${dob}`]
-    console.log(result)
-    
+  
     mainContainer.removeChild(headerText)
     mainContainer.removeChild(formContainer)
 }
@@ -99,10 +89,4 @@ function backToLanding(){
 
 returnBtn.addEventListener("click", backToLanding)
 
-
-// HOW TO GET SONG 
-
-// LINK SONG URI IF dob = inbetween 2 dates 
-
-// create database of all songs and 
 
