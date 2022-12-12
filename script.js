@@ -7,7 +7,7 @@ const mainContainer = document.querySelector(".main_container")
 // LANDING PAGE
 const headerText = document.createElement("h1")
 headerText.classList.add("header_text")
-headerText.textContent = "What's my birthdaysong"
+headerText.textContent = "What's your birthday song?"
 mainContainer.appendChild(headerText)
 
 const formContainer = document.createElement("form")
@@ -20,7 +20,7 @@ dobInput.setAttribute("type","date")
 const subBtn = document.createElement("input")
 subBtn.classList.add("sub_btn")
 subBtn.setAttribute("type","button")
-subBtn.setAttribute("value","find out")
+subBtn.setAttribute("value","Find out")
 
 //Appending childs Landing Page
 formContainer.appendChild(dobInput)
@@ -52,7 +52,7 @@ function getDoB(){
 function getSongPage(){
     //header
     headerSong.textContent = "The #1 song"
-    subheaderSong.textContent = `yy/mm/dd`  //insert inputed date
+    subheaderSong.textContent = `on your birthday`  //insert inputed date
     headerContainer.classList.add("header_container_song")
     headerContainer.appendChild(headerSong)
     headerContainer.appendChild(subheaderSong)
@@ -60,6 +60,7 @@ function getSongPage(){
 
     //Song link
     songLink.setAttribute("src",`${result}`)
+    songLink.classList.add("song_frame")
     mainContainer.appendChild(songLink)
 
     // Back to landing page
